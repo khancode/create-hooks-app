@@ -1,0 +1,24 @@
+{
+  "name": "xrpl-hooks-app",
+  "version": "1.0.0",
+  "description": "Set up an XRPL Hooks app by running one command",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "setup": "make setup",
+    "build:hook": "make -B build",
+    "set-hook": "make set-hook",
+    "build-set-hook": "make build-set-hook",
+    "clean": "make clean"
+  },
+  "author": {
+    "name": "Omar Khan",
+    "url": "https://github.com/khancode"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "ripple-address-codec": "^4.2.5",
+    "ripple-binary-codec": "^1.4.3",
+    "xrpl": "^2.7.0"
+  }
+}

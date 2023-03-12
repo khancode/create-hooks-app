@@ -1,0 +1,6 @@
+{
+  "WASM_FILENAME": "starter.wasm",
+  "HOOK_ACCOUNT": {
+    "secret": "sha1kmtpwyNgDoVeDPqTmDnEioMat"
+  }
+}
