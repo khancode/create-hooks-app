@@ -1,4 +1,4 @@
-# XRPL Crowdfunding Platform
+# XRPL Hooks App
 
 ## Install Dependencies
 
