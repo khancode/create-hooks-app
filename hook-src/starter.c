@@ -3,7 +3,7 @@
  */
 #include "hookapi.h"
 
-int64_t hook(uint32_t reserved ) {
+int64_t hook(uint32_t reserved) {
 
     TRACESTR("Accept.c: Called.");
     accept (0,0,0); 
