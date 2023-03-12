@@ -1,5 +1,7 @@
 .PHONY: install build
 
+HOOK_C_FILENAME := $(shell jq -r '.HOOK_C_FILENAME' config.json)
+
 setup: install update-definitions
 
 build-set-hook: build set-hook
@@ -14,10 +16,10 @@ update-definitions:
 
 build:
 	mkdir -p build
-	wasmcc ./hook-src/starter.c -o ./build/starter.wasm  -O0 -Wl,--allow-undefined -I../
-	./binaryen/bin/wasm-opt -O2 ./build/starter.wasm -o ./build/starter.wasm
-	./hook-cleaner-c/hook-cleaner ./build/starter.wasm
-	./xrpld-hooks/src/ripple/app/hook/guard_checker ./build/starter.wasm
+	wasmcc ./hook-src/$(HOOK_C_FILENAME).c -o ./build/$(HOOK_C_FILENAME).wasm  -O0 -Wl,--allow-undefined -I../
+	./binaryen/bin/wasm-opt -O2 ./build/$(HOOK_C_FILENAME).wasm -o ./build/$(HOOK_C_FILENAME).wasm
+	./hook-cleaner-c/hook-cleaner ./build/$(HOOK_C_FILENAME).wasm
+	./xrpld-hooks/src/ripple/app/hook/guard_checker ./build/$(HOOK_C_FILENAME).wasm
 
 set-hook:
 	node ./client/set-hook.js

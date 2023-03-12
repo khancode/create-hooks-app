@@ -9,12 +9,11 @@ const config = require('../config.json')
 const { client, connectClient, disconnectClient } = require('./util/xrpl-client')
 
 
-const wasmFilename = config.WASM_FILENAME
-const wasmFilenameWithoutExt = wasmFilename.substring(0, wasmFilename.length - 5)
+const hookFilename = config.HOOK_C_FILENAME
 const HOOK_ACCOUNT = Wallet.fromSecret(config.HOOK_ACCOUNT.secret)
 const hsfOVERRIDE = 1
-const wasm = fs.readFileSync(path.resolve(__dirname, `../build/${wasmFilename}`))
-const hookNamespace = addr.codec._sha256(wasmFilenameWithoutExt).toString(`hex`).toUpperCase()
+const wasm = fs.readFileSync(path.resolve(__dirname, `../build/${hookFilename}.wasm`))
+const hookNamespace = addr.codec._sha256(hookFilename).toString(`hex`).toUpperCase()
 
 
 async function run() {

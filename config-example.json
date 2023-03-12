@@ -1,5 +1,5 @@
 {
-  "WASM_FILENAME": "starter.wasm",
+  "HOOK_C_FILENAME": "starter",
   "HOOK_ACCOUNT": {
     "secret": "sha1kmtpwyNgDoVeDPqTmDnEioMat"
   }
