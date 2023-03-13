@@ -10,7 +10,7 @@ const { client, connectClient, disconnectClient } = require('./util/xrpl-client'
 
 
 const hookFilename = config.HOOK_C_FILENAME
-const HOOK_ACCOUNT = Wallet.fromSecret(config.HOOK_ACCOUNT.secret)
+const HOOK_ACCOUNT = Wallet.fromSeed(config.HOOK_ACCOUNT.seed)
 const hsfOVERRIDE = 1
 const wasm = fs.readFileSync(path.resolve(__dirname, `../build/${hookFilename}.wasm`))
 const hookNamespace = addr.codec._sha256(hookFilename).toString(`hex`).toUpperCase()
