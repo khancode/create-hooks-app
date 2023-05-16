@@ -19,7 +19,7 @@ Once the dependencies are installed, you should be able to run the project. If y
 
 Run this command to locally compile an XRPL Hook source file (inside ./hook-src) from .c to .wasm code and install it onto an account by submitting a `SetHook` transaction:
 
-`$ npm run build-set-hook`
+`$ npm run build-set-hooks`
 
 Here is what each command does in the background:
 1. `wasmcc` - compiles a Hook source file (C code) to WebAssembly (WASM) code. For example, `./hook-src/starter.c` compiles to `./build/starter.wasm`

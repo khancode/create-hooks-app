@@ -1,6 +1,6 @@
 const fs = require('fs')
 
-const { client, connectClient, disconnectClient } = require('./client/util/xrpl-client')
+const { client, connectClient, disconnectClient } = require('./client/util/xrplClient')
 
 const DEFINITIONS_JSON_PATH = './node_modules/ripple-binary-codec/dist/enums/definitions.json'
 

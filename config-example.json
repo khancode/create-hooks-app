@@ -1,6 +1,16 @@
 {
-  "HOOK_C_FILENAME": "starter",
+  "HOOKS": [
+    {
+      "HOOK_C_FILENAME": "starter_payment",
+      "HookOn": ["Payment"]
+    },
+    {
+      "HOOK_C_FILENAME": "starter_invoke",
+      "HookOn": ["Invoke"]
+    }
+  ],
   "HOOK_ACCOUNT": {
     "seed": "snr67jzBqsqYMLAuRsMJ95DDSAzDW"
-  }
+  },
+  "HOOK_NAMESPACE_SEED": "starter"
 }

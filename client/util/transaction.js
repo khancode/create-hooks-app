@@ -1,6 +1,7 @@
+const { SHA256 } = require('crypto-js')
 const { encode } = require('ripple-binary-codec')
 
-const { client } = require('./xrpl-client')
+const { client } = require('./xrplClient')
 
 
 async function fee_rpc(tx_blob) {
@@ -30,4 +31,8 @@ async function prepareTransactionV3(transaction) {
   transaction.Fee = await getTransactionFee(transaction)
 }
 
-module.exports = { prepareTransactionV3 }
+function deriveHookNamespace(hookNamespaceSeed) {
+  return SHA256(hookNamespaceSeed).toString().toUpperCase()
+}
+
+module.exports = { deriveHookNamespace, prepareTransactionV3 }
